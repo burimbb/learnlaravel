@@ -2,6 +2,7 @@
 
 use App\Card;
 use App\Events\UserReachedNegativePoints;
+use App\Jobs\DoSomething;
 use App\PostCardSendingService;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -139,4 +140,8 @@ Route::get('/fileputcontent', function(){
 
     file_put_contents($path, "Hello World");
     file_put_contents($path1, "Hello World", FILE_APPEND);
+});
+
+Route::get('/dispatchjob', function(){
+    DoSomething::dispatchNow();
 });
