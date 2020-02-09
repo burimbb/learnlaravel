@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Learn Vue 2</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+<body>
+    <div id="app">
+        <p>\Helloo</p>
+        
+        <input type="text" v-model="name">
+        <p>{{name}}</p>
+
+        <button v-on:click="add()">Add Name</button>
+
+        <ul v-for="item in names">
+            <li>{{item}}</li>
+        </ul>
+
+        <button :disabled="btnDisable" @click="disable()">Disable Button</button>
+
+        <h4>All Tasks</h4>
+        <ul>
+            <li v-for="(item, index) in tasks" :key="index" v-text="item.description"></li>
+        </ul>
+        <h4>InCompleted Tasks</h4>
+        <ul>
+
+            <li v-for="(item, index) in incompletedTasks" :key="index" v-text="item.description"></li>
+        </ul>
+
+        <h4>Some Component Tasks</h4>
+        <task>
+            <h2>Test</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </task>
+        
+        <task-list></task-list>
+        
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: "",
+                names: ['hej', 'qkemi', "Qee"],
+                btnDisable: false, 
+            },
+            methods: {
+                add(){
+                    this.names.push(this.name);
+                    this.name = "";
+                },
+                disable(){
+                    this.btnDisable = true;
+                }
+            },
+
+            computed: {
+                incompletedTasks(){
+                    return this.tasks.filter(task => { return ! task.completed});
+                }
+            },
+        });
+    </script>
+</body>
+</html>

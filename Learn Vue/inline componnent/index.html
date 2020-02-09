@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Inline</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+</head>
+<body>
+    <div id="app">
+        <test></test>
+        <progress-view inline-template>
+            <div>
+                <h1>Test h1</h1>
+                <p>Rates: {{rates}}</p>
+                <ul>
+                    <li>Hello</li>
+                    <li>World</li>
+                </ul>
+                <button @click="rates += 10">Add 10 to rates</button>
+            </div>
+        </progress-view>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
