@@ -32,6 +32,10 @@ class DoSomething implements ShouldQueue
     public function handle()
     {
         var_dump("Hello from job [".$this->number."] handle!!");
+
         Log::info("DoSomething job executed");
+        Log::warning("DoSomething job executed warning");
+        Log::critical("DoSomething job executed critical");
+        Log::alert("DoSomething job executed alert");
     }
 }
