@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52d5ab7629203ea71f9d6d7fb6f101d5",
+    "content-hash": "b18fb89f2189f6e9f9b77b3e01535b74",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -501,6 +501,54 @@
                 "trusted proxy"
             ],
             "time": "2019-09-03T16:45:42+00:00"
+        },
+        {
+            "name": "haruncpi/laravel-log-reader",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/haruncpi/laravel-log-reader.git",
+                "reference": "64defaf834258fa46abb20a8a0e1a7e340b5028d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/haruncpi/laravel-log-reader/zipball/64defaf834258fa46abb20a8a0e1a7e340b5028d",
+                "reference": "64defaf834258fa46abb20a8a0e1a7e340b5028d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Haruncpi\\LaravelLogReader\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Haruncpi\\LaravelLogReader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "cc-by-4.0"
+            ],
+            "authors": [
+                {
+                    "name": "MD.HARUN-UR-RASHID",
+                    "email": "harun.cox@gmail.com"
+                }
+            ],
+            "description": "A simple and beautiful laravel log reader",
+            "keywords": [
+                "laravel",
+                "log",
+                "reader"
+            ],
+            "time": "2020-02-08T11:23:30+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

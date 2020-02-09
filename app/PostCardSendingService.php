@@ -28,6 +28,6 @@ class PostCardSendingService
 
     public function test()
     {
-        dd(app()->version());
+        dump(app()->version());
     }
 }

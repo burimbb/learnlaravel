@@ -143,5 +143,18 @@ Route::get('/fileputcontent', function(){
 });
 
 Route::get('/dispatchjob', function(){
-    DoSomething::dispatchNow();
+    DoSomething::dispatchNow(5);
+
+    dispatch(new DoSomething(10));
 });
+
+Route::group([
+    'namespace' => '\Haruncpi\LaravelLogReader\Controllers',
+    
+    ],
+    function () {
+        Route::get(config('laravel-log-reader.view_route_path'), 'LogReaderController@getIndex');
+        Route::post(config('laravel-log-reader.view_route_path'), 'LogReaderController@postDelete');
+        Route::get(config('laravel-log-reader.api_route_path'), 'LogReaderController@getLogs');
+    }
+);

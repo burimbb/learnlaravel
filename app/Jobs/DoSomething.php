@@ -7,19 +7,21 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class DoSomething implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected $number;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($number)
     {
-        //
+        $this->number = $number;
     }
 
     /**
@@ -29,6 +31,7 @@ class DoSomething implements ShouldQueue
      */
     public function handle()
     {
-        dd("Hello from job handle!!");
+        var_dump("Hello from job [".$this->number."] handle!!");
+        Log::info("DoSomething job executed");
     }
 }
