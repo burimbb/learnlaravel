@@ -16,6 +16,8 @@ import VModal from 'vue-js-modal';
 
 Vue.use(VModal);
 
+/* import Turbolinks from 'turbolinks';
+Turbolinks.start(); */
 
 /**
  * The following block of code may be used to automatically register your

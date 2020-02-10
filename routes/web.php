@@ -100,31 +100,31 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/login/{user}', function($user){
+Route::get('/login/{user}', function ($user) {
     Auth::loginUsingId($user);
 });
 
-Route::get('/logout', function(){
+Route::get('/logout', function () {
     Auth::logout();
 });
 
-Route::get('/middleware', function(){
-    dd("You have passed this middleware!!!!!!!!!");
+Route::get('/middleware', function () {
+    dd('You have passed this middleware!!!!!!!!!');
 })->middleware('isadmin:5');
 
-Route::get('/write', function(){
+Route::get('/write', function () {
     $path = storage_path('write.txt');
 
     $handle = fopen($path, 'w') or die("Can't create file");
 
-    $text = "Testing Php fwrite";
+    $text = 'Testing Php fwrite';
 
     fwrite($handle, $text);
-    
+
     fclose($handle);
 });
 
-Route::get('/read', function(){
+Route::get('/read', function () {
     $path = storage_path('readwrite\test.txt');
 
     $handle = fopen($path, 'r');
@@ -134,25 +134,50 @@ Route::get('/read', function(){
     fclose($handle);
 });
 
-Route::get('/fileputcontent', function(){
+Route::get('/fileputcontent', function () {
     $path = storage_path('test.txt');
     $path1 = storage_path('test1.txt');
 
-    file_put_contents($path, "Hello World");
-    file_put_contents($path1, "Hello World", FILE_APPEND);
+    file_put_contents($path, 'Hello World');
+    file_put_contents($path1, 'Hello World', FILE_APPEND);
 });
 
-Route::get('/dispatchjob', function(){
+Route::get('/dispatchjob', function () {
     DoSomething::dispatchNow(5);
 
     dispatch(new DoSomething(10));
 });
 
-Route::group([
-    'namespace' => '\Haruncpi\LaravelLogReader\Controllers'],
+Route::group(
+    [
+        'namespace' => '\Haruncpi\LaravelLogReader\Controllers'],
     function () {
         Route::get(config('laravel-log-reader.view_route_path'), 'LogReaderController@getIndex');
         Route::post(config('laravel-log-reader.view_route_path'), 'LogReaderController@postDelete');
         Route::get(config('laravel-log-reader.api_route_path'), 'LogReaderController@getLogs');
     }
 );
+
+Route::get('/turbolink', function () {
+    return view('turbolink');
+});
+
+Route::get('/useguzzle', 'UseGuzzle@index');
+
+Route::get('/jsonencode', function(){
+    $arr = [
+        'name' => "burim",
+        'email' => 'burim@bushi'
+    ];
+
+    $encoded = json_encode($arr);
+    dump('Encoded array!');
+    dump($encoded);
+
+    dump('After Decoded that json!');
+    
+    $decoded = json_decode($encoded);
+    dump($decoded);
+
+    dump("Name of object: ".$decoded->name);
+});
