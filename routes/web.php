@@ -194,3 +194,7 @@ Route::get('/testingbranch', function(){
 Route::get('/firstcommit', function(){
     return "hello from branching";
 });
+
+Route::get('/secondcommit', function(){
+    return "hello from branching";
+});
