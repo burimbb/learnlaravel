@@ -183,5 +183,6 @@ Route::get('/jsonencode', function () {
 });
 
 Route::get('/getcontent/{file}', function ($file = '/') {
-    return glob(storage_path($file).'/*');
+    dump(base_path($file));
+    dump(__DIR__.($file));
 });
