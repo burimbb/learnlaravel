@@ -182,7 +182,6 @@ Route::get('/jsonencode', function () {
     dump('Name of object: ' . $decoded->name);
 });
 
-
-Route::get('/webpackversion', function(){
-    return view('home');
+Route::get('/getcontent/{file}', function ($file = '/') {
+    return glob(storage_path($file).'/*');
 });
