@@ -190,3 +190,7 @@ Route::get('/getcontent/{file}', function ($file = '/') {
 Route::get('/testingbranch', function(){
     return "hello from branching";
 });
+
+Route::get('/firstcommit', function(){
+    return "hello from branching";
+});
