@@ -186,3 +186,7 @@ Route::get('/getcontent/{file}', function ($file = '/') {
     dump(base_path($file));
     dump(__DIR__.($file));
 });
+
+Route::get('/testingbranch', function(){
+    return "hello from branching";
+});
