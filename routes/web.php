@@ -164,9 +164,9 @@ Route::get('/turbolink', function () {
 
 Route::get('/useguzzle', 'UseGuzzle@index');
 
-Route::get('/jsonencode', function(){
+Route::get('/jsonencode', function () {
     $arr = [
-        'name' => "burim",
+        'name' => 'burim',
         'email' => 'burim@bushi'
     ];
 
@@ -175,9 +175,14 @@ Route::get('/jsonencode', function(){
     dump($encoded);
 
     dump('After Decoded that json!');
-    
+
     $decoded = json_decode($encoded);
     dump($decoded);
+    dump(config());
+    dump('Name of object: ' . $decoded->name);
+});
 
-    dump("Name of object: ".$decoded->name);
+
+Route::get('/webpackversion', function(){
+    return view('home');
 });
