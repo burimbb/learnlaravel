@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use Symfony\Component\Finder\Finder;
 
 Route::get('/', function () {
     /* dd(Str::partNumber(44454741354)); */
@@ -201,4 +202,15 @@ Route::get('/secondcommit', function () {
 
 Route::get('/tasks', function(){
     return view('tasks');
+});
+
+Route::get('/filefinder', function(){
+    $files = Finder::create()
+        ->files()
+        ->in(base_path('/storage'))
+        ->name('test*');
+
+    foreach ($files as $file) {
+        dump(file_get_contents($file));
+    }
 });
