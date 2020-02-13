@@ -207,10 +207,24 @@ Route::get('/tasks', function(){
 Route::get('/filefinder', function(){
     $files = Finder::create()
         ->files()
-        ->in(base_path('/storage'))
-        ->name('test*');
+        ->name('test*')
+        ->in(base_path('/storage'));
 
     foreach ($files as $file) {
-        dump(file_get_contents($file));
+        /* dump(file_get_contents($file)); */
+
+        dump($file->getPathName());
+        dump((new SplFileInfo($file))->getPath());
+    }
+});
+
+Route::get('/unlinkfiles', function(){
+    $files = Finder::create()
+        ->files()
+        ->in(base_path('/storage'))
+        ->name('*.test');
+
+    foreach ($files as $file) {
+        unlink($file->getPathName());
     }
 });
