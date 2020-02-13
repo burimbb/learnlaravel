@@ -198,3 +198,7 @@ Route::get('/firstcommit', function () {
 Route::get('/secondcommit', function () {
     return 'hello from branching';
 });
+
+Route::get('/tasks', function(){
+    return view('tasks');
+});
