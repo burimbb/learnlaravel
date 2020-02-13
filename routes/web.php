@@ -184,17 +184,17 @@ Route::get('/jsonencode', function () {
 
 Route::get('/getcontent/{file}', function ($file = '/') {
     dump(base_path($file));
-    dump(__DIR__.($file));
+    dump(__DIR__ . ($file));
 });
 
-Route::get('/testingbranch', function(){
-    return "hello from branching";
+Route::get('/testingbranch', function () {
+    return 'hello from branching';
 });
 
-Route::get('/firstcommit', function(){
-    return "hello from branching";
+Route::get('/firstcommit', function () {
+    return 'hello from branching';
 });
 
-Route::get('/secondcommit', function(){
-    return "hello from branching";
+Route::get('/secondcommit', function () {
+    return 'hello from branching';
 });
