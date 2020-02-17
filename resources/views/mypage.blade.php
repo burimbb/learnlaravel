@@ -47,6 +47,14 @@
           <div class="col bg-secondary">Column</div>
           <div class="col bg-primary">Column</div>
         </div>
-      </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col bg-primary">Test</div>
+            <div class="col-6 bg-secondary">Wider</div>
+            <div class="col bg-primary">Test</div>
+        </div>
+    </div>
 </body>
 </html>
