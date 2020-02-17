@@ -21,5 +21,31 @@
             <button type="submit" class="btn btn-primary">Button</button>
         </form>
     </div>
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md bg-primary">One of three columns</div>
+            <div class="col-md bg-secondary">One of three columns</div>
+            <div class="col-md bg-primary">One of three columns</div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col bg-primary">One of three columns</div>
+            <div class="col bg-secondary">One of three columns</div>
+            <div class="col bg-primary">One of three columns</div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col bg-primary">Column</div>
+          <div class="col bg-secondary">Column</div>
+          <div class="w-100"></div>
+          <div class="col bg-secondary">Column</div>
+          <div class="col bg-primary">Column</div>
+        </div>
+      </div>
 </body>
 </html>
