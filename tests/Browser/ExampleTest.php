@@ -21,4 +21,17 @@ class ExampleTest extends DuskTestCase
         });
     }
 
+    /**
+     * @test
+     */
+    public function testInputPage()
+    {
+        $this->browse(function(Browser $browser){
+            $browser->visit('/page')
+                ->type('name', 'FOOBAR')
+                ->press('Button')
+                ->assertSee('You typed FOOBAR');
+        });
+    }
+
 }

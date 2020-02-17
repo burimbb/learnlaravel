@@ -207,13 +207,14 @@ Route::get('/tasks', function(){
 Route::get('/filefinder', function(){
     $files = Finder::create()
         ->files()
-        ->name('test*')
+        ->name('*.test')
         ->in(base_path('/storage'));
 
     foreach ($files as $file) {
-        /* dump(file_get_contents($file)); */
+        dump(file_get_contents($file));
 
         dump($file->getPathName());
+        dump($file->getRealPath());
         dump((new SplFileInfo($file))->getPath());
     }
 });
@@ -227,4 +228,12 @@ Route::get('/unlinkfiles', function(){
     foreach ($files as $file) {
         unlink($file->getPathName());
     }
+});
+
+Route::get('/page', function(){
+    return view('mypage');
+});
+
+Route::post('/pagepost', function(){
+    return "You typed ".request()->name;
 });
