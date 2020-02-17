@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script src="{{asset('js/app.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-    <div>
+    <div class="col-md-6 offset-3">
         <form action="/pagepost" method="POST">
             @csrf
             <div class="form-group">
-                <label for="name">name:</label>
+                <label for="name">Name:</label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="name">
             </div>
         

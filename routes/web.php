@@ -200,11 +200,11 @@ Route::get('/secondcommit', function () {
     return 'hello from branching';
 });
 
-Route::get('/tasks', function(){
+Route::get('/tasks', function () {
     return view('tasks');
 });
 
-Route::get('/filefinder', function(){
+Route::get('/filefinder', function () {
     $files = Finder::create()
         ->files()
         ->name('*.test')
@@ -219,7 +219,7 @@ Route::get('/filefinder', function(){
     }
 });
 
-Route::get('/unlinkfiles', function(){
+Route::get('/unlinkfiles', function () {
     $files = Finder::create()
         ->files()
         ->in(base_path('/storage'))
@@ -230,10 +230,10 @@ Route::get('/unlinkfiles', function(){
     }
 });
 
-Route::get('/page', function(){
+Route::get('/page', function () {
     return view('mypage');
 });
 
-Route::post('/pagepost', function(){
-    return "You typed ".request()->name;
+Route::post('/pagepost', function () {
+    return 'You typed ' . request()->name;
 });
