@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
+    protected $dateFormat = 'Y-m-d\TH:i:sP';
+
     protected $fillable = ['title'];
 
     public function comments()

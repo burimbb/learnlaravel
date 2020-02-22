@@ -16,6 +16,7 @@
         "haruncpi/laravel-log-reader": "^1.0",
         "laravel/framework": "^6.0",
         "laravel/horizon": "^3.6",
+        "laravel/passport": "^8.4",
         "laravel/telescope": "^2.1",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
