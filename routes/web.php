@@ -5,6 +5,7 @@ use App\Events\UserReachedNegativePoints;
 use App\Jobs\DoSomething;
 use App\PostCardSendingService;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
@@ -237,3 +238,53 @@ Route::get('/page', function () {
 Route::post('/pagepost', function () {
     return 'You typed ' . request()->name;
 });
+
+/* -------------------------------------------------- */
+/* Passport routes exepts in authprovider routes */
+//Create edit passport page
+Route::get('/passport', function () {
+    return view('passport.index');
+});
+/* -------------------------------------------------- */
+Route::get('/web/passport', function () {
+    return view('passport.test');
+});
+/* -------------------------------------------------- */
+/* Routes that will be in your site ex. consumer.dev */
+/* Route::get('/redirect', function (Request $request) {
+    $request->session()->put('state', $state = Str::random(40));
+
+    $query = http_build_query([
+        'client_id' => '1',
+        'redirect_uri' => 'http://laravel6.test/callback',
+        'response_type' => 'code',
+        'scope' => '',
+        'state' => $state,
+    ]);
+
+    return redirect('http://learnlaravel.test/oauth/authorize?'.$query);
+});
+
+Route::get('/callback', function (Request $request) {
+    $state = $request->session()->pull('state');
+
+    throw_unless(
+        strlen($state) > 0 && $state === $request->state,
+        InvalidArgumentException::class
+    );
+
+    $http = new GuzzleHttp\Client;
+
+    $response = $http->post('http://learnlaravel.test/oauth/token', [
+        'form_params' => [
+            'grant_type' => 'authorization_code',
+            'client_id' => '1',
+            'client_secret' => 'iiyEuBM0GZUXjPkXFm0m6ZIiDNn2WK2U9HUBBMBp',
+            'redirect_uri' => 'http://laravel6.test/callback',
+            'code' => $request->code,
+        ],
+    ]);
+
+    return json_decode((string) $response->getBody(), true);
+}); */
+/* -------------------------------------------------- */
