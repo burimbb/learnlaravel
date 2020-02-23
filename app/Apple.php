@@ -22,4 +22,12 @@ class Apple extends Model
                     ->thenReturn()
                     ->paginate(5);
     }
+
+    /**
+     * Create new public function
+     */
+    public function publish($note)
+    {
+        return "Public method: ".$note;
+    }
 }
