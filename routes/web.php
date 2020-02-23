@@ -288,3 +288,11 @@ Route::get('/callback', function (Request $request) {
     return json_decode((string) $response->getBody(), true);
 }); */
 /* -------------------------------------------------- */
+
+Route::get('/form', function(){
+    return view('form');
+});
+
+Route::post('/form', function(){
+    return request()->all();
+})->name('form.post');
