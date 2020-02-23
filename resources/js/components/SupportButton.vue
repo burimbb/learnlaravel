@@ -2,6 +2,10 @@
     <div>
         <button class="btn btn-primary" @click="$modal.show('contact-support-modal')">Support</button>
 
+        <v-dialog/>
+
+        <button class="btn btn-dark" @click="showDialog()">Show Dialog</button>
+
         <modal name="contact-support-modal"
             height="auto"
             width="100%">
@@ -100,6 +104,27 @@ export default {
         hideForm(){
             this.$modal.hide('contact-support-modal');
             this.resetForm();
+        },
+
+        showDialog(){
+            this.$modal.show('dialog', {
+                title: 'Alert!',
+                text: 'You are too awesome',
+                buttons: [
+                    {
+                        title: 'Deal with it',
+                        handler: () => { alert('Woot!') }
+                    },
+                    {
+                        title: '',       // Button title
+                        default: true,    // Will be triggered by default if 'Enter' pressed.
+                        handler: () => {} // Button click handler
+                    },
+                    {
+                        title: 'Close'
+                    }
+                ]
+            });
         }
     }
 }

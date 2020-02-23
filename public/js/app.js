@@ -2058,6 +2058,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 // ES6 Modules or TypeScript
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2090,6 +2094,27 @@ __webpack_require__.r(__webpack_exports__);
     hideForm: function hideForm() {
       this.$modal.hide('contact-support-modal');
       this.resetForm();
+    },
+    showDialog: function showDialog() {
+      this.$modal.show('dialog', {
+        title: 'Alert!',
+        text: 'You are too awesome',
+        buttons: [{
+          title: 'Deal with it',
+          handler: function handler() {
+            alert('Woot!');
+          }
+        }, {
+          title: '',
+          // Button title
+          "default": true,
+          // Will be triggered by default if 'Enter' pressed.
+          handler: function handler() {} // Button click handler
+
+        }, {
+          title: 'Close'
+        }]
+      });
     }
   }
 });
@@ -42853,6 +42878,21 @@ var render = function() {
         [_vm._v("Support")]
       ),
       _vm._v(" "),
+      _c("v-dialog"),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-dark",
+          on: {
+            click: function($event) {
+              return _vm.showDialog()
+            }
+          }
+        },
+        [_vm._v("Show Dialog")]
+      ),
+      _vm._v(" "),
       _c(
         "modal",
         {
@@ -56365,7 +56405,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.use(portal_vue__WEBPACK_IMPORTED_MODULE_0___default.a);
 
-Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_1___default.a);
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  dialog: true
+});
 /* import Turbolinks from 'turbolinks';
 Turbolinks.start(); */
 

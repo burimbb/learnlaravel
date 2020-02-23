@@ -14,7 +14,7 @@ Vue.use(PortalVue);
 
 import VModal from 'vue-js-modal';
 
-Vue.use(VModal);
+Vue.use(VModal, { dialog: true });
 
 /* import Turbolinks from 'turbolinks';
 Turbolinks.start(); */
