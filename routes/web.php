@@ -289,17 +289,16 @@ Route::get('/callback', function (Request $request) {
 }); */
 /* -------------------------------------------------- */
 
-Route::get('/form', function(){
+Route::get('/form', function () {
     return view('form');
 });
 
-Route::post('/form', function(){
+Route::post('/form', function () {
     return request()->all();
 })->name('form.post');
 
-
 use Facades\App\Apple;
 
-Route::get('/realtimefacades', function(){
-    return Apple::publish("my note");
+Route::get('/realtimefacades', function () {
+    return Apple::publish('my note');
 });
