@@ -5,9 +5,11 @@ use App\Events\UserReachedNegativePoints;
 use App\Jobs\DoSomething;
 use App\PostCardSendingService;
 use App\User;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
 
