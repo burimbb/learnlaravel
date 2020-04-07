@@ -301,14 +301,15 @@ Route::post('/form', function () {
 
 use Facades\App\Apple;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\LazyCollection;
 
 Route::get('/realtimefacades', function () {
     return Apple::publish('my note');
 });
 
 //-------------------Whats new in Laravel 6---------------------
-Route::get('/lazycollection', function(){
-    DB::listen(function($query){
+Route::get('/lazycollection', function () {
+    DB::listen(function ($query) {
         dump($query);
     });
 
@@ -317,6 +318,44 @@ Route::get('/lazycollection', function(){
     //when calling first than will be excecuted a query
     /* dump($users->first()); */
     dump($users->first());
+
+    return 'done';
+});
+
+/**
+ * Create new public function
+ */
+function readFromFile($path)
+{
+    $file = fopen($path, 'r');
+
+    while ($line = fgets($file)) {
+        yield $line;
+    }
+}
+
+Route::get('/generator/readfromfile', function () {
+    $path = storage_path('logs/laravel-2020-04-07.log');
+
+    foreach (readFromFile($path) as $line) {
+        dump($line);
+    }
+
+    return 'done';
+});
+
+Route::get('/lazy/readfromfile', function () {
+    LazyCollection::make(function () {
+        $path = storage_path('logs/laravel-2020-04-07.log');
+        $file = fopen($path, 'r');
+
+        while ($line = fgets($file)) {
+            yield $line;
+        }
+    })
+    ->each(function ($line) {
+        dump($line);
+    });
 
     return 'done';
 });
