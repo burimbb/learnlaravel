@@ -300,7 +300,25 @@ Route::post('/form', function () {
 })->name('form.post');
 
 use Facades\App\Apple;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/realtimefacades', function () {
     return Apple::publish('my note');
 });
+
+//-------------------Whats new in Laravel 6---------------------
+Route::get('/lazycollection', function(){
+    DB::listen(function($query){
+        dump($query);
+    });
+
+    $users = User::cursor();
+
+    //when calling first than will be excecuted a query
+    /* dump($users->first()); */
+    dump($users->first());
+
+    return 'done';
+});
+
+//-------------------Whats new in Laravel 7---------------------

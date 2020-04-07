@@ -19,11 +19,11 @@ class PostCardSendingService
 
     public function hello($message, $email)
     {
-        Mail::raw($message, function($message) use ($email){
+        Mail::raw($message, function ($message) use ($email) {
             $message->to($email);
         });
 
-        dump("Post card was send!!");
+        dump('Post card was send!!');
     }
 
     public function test()
