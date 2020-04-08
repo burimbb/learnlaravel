@@ -360,4 +360,19 @@ Route::get('/lazy/readfromfile', function () {
     return 'done';
 });
 
+//Subquery
+Route::get('/subquery', function () {
+    /* DB::listen(function ($query) {
+        dump($query);
+    }); */
+
+    return User::addSelect(['last_adjustment' => function ($query) {
+        $query->select('id')
+            ->from('adjustments')
+            ->whereColumn('user_id', 'users.id')
+            ->limit(1)
+            ->latest();
+    }])->find([1, 2]);
+});
+
 //-------------------Whats new in Laravel 7---------------------
