@@ -366,6 +366,14 @@ Route::get('/subquery', function () {
         dump($query);
     }); */
 
+    return User::orderBy(function ($query) {
+        $query->select('created_at')
+            ->from('adjustments')
+            ->latest()
+            ->whereColumn('user_id', 'users.id')
+            ->limit(1);
+    })->find([1, 2]);
+
     return User::addSelect(['last_adjustment' => function ($query) {
         $query->select('id')
             ->from('adjustments')
@@ -374,5 +382,16 @@ Route::get('/subquery', function () {
             ->latest();
     }])->find([1, 2]);
 });
+
+//Password Reconfirm to any route you want
+Route::get('/want/passwordconfirm', function(){
+    dump(session('auth'));
+    /* dump(app('session')->forget(array_keys(session('auth'))[0]));  //not working */
+    return 'Done';
+})->middleware('password.confirm');
+
+//if not want to define routes of confirmation
+/* Auth::routes(['confirm' => false]); */
+/* Auth::routes(['reset' => false]); */
 
 //-------------------Whats new in Laravel 7---------------------
