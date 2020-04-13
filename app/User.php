@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Achievment', 'users_achievments')->withTimestamps();
     }
+
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'commentable');
+    }
 }

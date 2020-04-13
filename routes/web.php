@@ -1,6 +1,7 @@
 <?php
 
 use App\Card;
+use App\Comment;
 use App\Events\UserReachedNegativePoints;
 use App\Jobs\DoSomething;
 use App\PostCardSendingService;
@@ -394,4 +395,13 @@ Route::get('/want/passwordconfirm', function(){
 /* Auth::routes(['confirm' => false]); */
 /* Auth::routes(['reset' => false]); */
 
-//-------------------Whats new in Laravel 7---------------------
+//-------------------Whats new in Laravel 5.8---------------------
+//Autodiscovery Policy
+Auth::loginUsingId(1);
+Route::get('/comments/{comment}', function(Comment $comment){
+    return $comment;
+})->middleware('can:view,comment');
+
+Route::get('/comments/{comment}/update', 'CommentController@update');
+
+//-------------------Whats new in Laravel 5.7---------------------
