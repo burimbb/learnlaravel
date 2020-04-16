@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "ext-posix": "*",
+        "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-dompdf": "^0.8.5",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.5",

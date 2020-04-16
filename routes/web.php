@@ -385,7 +385,7 @@ Route::get('/subquery', function () {
 });
 
 //Password Reconfirm to any route you want
-Route::get('/want/passwordconfirm', function(){
+Route::get('/want/passwordconfirm', function () {
     dump(session('auth'));
     /* dump(app('session')->forget(array_keys(session('auth'))[0]));  //not working */
     return 'Done';
@@ -395,10 +395,34 @@ Route::get('/want/passwordconfirm', function(){
 /* Auth::routes(['confirm' => false]); */
 /* Auth::routes(['reset' => false]); */
 
+Route::get('/withoutoptimizedquery', function(){
+    return view('queries.index', [
+        'users' => User::all(),
+    ]);
+});
+
+Route::get('/optimizedquery', function(){
+    return view('queries.optimized', [
+        'users' => User::with('comments')->get(),//optimized
+    ]);
+});
+
+Route::get('/bigoptimizedquery', function(){
+    return view('queries.bigoptimized', [
+        'users' => User::query()
+                    ->addSelect(['last_comment' => 
+                        Comment::select('created_at')
+                            ->whereColumn('commentable_id', 'users.id')
+                            ->latest()
+                            ->take(1)
+                    ])->get(), // big optimized
+    ]);
+});
+
 //-------------------Whats new in Laravel 5.8---------------------
 //Autodiscovery Policy
 Auth::loginUsingId(1);
-Route::get('/comments/{comment}', function(Comment $comment){
+Route::get('/comments/{comment}', function (Comment $comment) {
     return $comment;
 })->middleware('can:view,comment');
 
