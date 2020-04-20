@@ -432,25 +432,25 @@ Route::get('/comments/{comment}', function (Comment $comment) {
 Route::get('/comments/{comment}/update', 'CommentController@update');
 
 //Cache ttl in seconds
-Route::get('cache', function(){
-    return Cache::remember('Hello', 20, function(){
+Route::get('cache', function () {
+    return Cache::remember('Hello', 20, function () {
         return [1, 2, 3];
     });
 });
 
-Route::get('getcache', function(){
+Route::get('getcache', function () {
     return Cache::get('Hello');
 });
 
 //Mocking in testing
-Route::get('/newsletter', function(Newsletter $newsletter){
+Route::get('/newsletter', function (Newsletter $newsletter) {
     $newsletter->subscribeTo('members', auth()->user());
 
-    return "Done";
+    return 'Done';
 })->middleware('auth');
 
 //event auto discovery
-Route::get('/register-a-user', function(){
+Route::get('/register-a-user', function () {
     $user = factory('App\User')->create();
 
     return $user;
@@ -460,10 +460,11 @@ Route::get('/register-a-user', function(){
 //must verify middleware
 Auth::routes(['verify' => true]);
 
-Route::get('/mustverify', function(){
-    return "You are verified!!";
+Route::get('/mustverify', function () {
+    return 'You are verified!!';
 })->middleware('verified');
 
+//Added XRay for viewing blades on front end for bigger projects
 
 //-------------------Whats new in Laravel 5.6---------------------
 //-------------------Whats new in Laravel 5.5---------------------
