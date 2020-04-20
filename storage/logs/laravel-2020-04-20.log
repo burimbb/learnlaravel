@@ -2452,3 +2452,41 @@
 #40 /home/vagrant/LearnLaravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #41 {main}
 "} 
+[2020-04-20 15:46:25] local.INFO: Detected N+1 Query  
+[2020-04-20 15:46:25] local.INFO: Model: App\User
+Relation: comments
+Num-Called: 34
+Call-Stack:
+#17 /storage/framework/views/4766191b0ab59ca0107041ef45ecea7729b397fe.php:12
+#19 /vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php:59
+#20 /vendor/facade/ignition/src/Views/Engines/CompilerEngine.php:36
+#21 /vendor/laravel/framework/src/Illuminate/View/View.php:143
+#22 /vendor/laravel/framework/src/Illuminate/View/View.php:126
+#23 /vendor/laravel/framework/src/Illuminate/View/View.php:91
+#24 /vendor/laravel/framework/src/Illuminate/Http/Response.php:42
+#25 /vendor/symfony/http-foundation/Response.php:202
+#26 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:749
+#27 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:721
+#28 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:681
+#29 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:130
+#30 /vendor/laravel/passport/src/Http/Middleware/CreateFreshApiToken.php:50
+#31 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#32 /vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php:41
+#33 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#34 /vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:76
+#35 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#36 /vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php:49
+#37 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#38 /vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php:56
+#39 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#40 /vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php:37
+#41 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#42 /vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php:66
+#43 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:171
+#44 /vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:105
+#45 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:683
+#46 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:658
+#47 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:624
+#48 /vendor/laravel/framework/src/Illuminate/Routing/Router.php:613
+#49 /vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:170
+  
