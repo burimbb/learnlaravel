@@ -430,4 +430,16 @@ Route::get('/comments/{comment}', function (Comment $comment) {
 
 Route::get('/comments/{comment}/update', 'CommentController@update');
 
+//Cache ttl in seconds
+Route::get('cache', function(){
+    return Cache::remember('Hello', 20, function(){
+        return [1, 2, 3];
+    });
+});
+
+Route::get('getcache', function(){
+    return Cache::get('Hello');
+});
+
+
 //-------------------Whats new in Laravel 5.7---------------------
