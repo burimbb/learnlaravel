@@ -457,3 +457,13 @@ Route::get('/register-a-user', function(){
 });
 
 //-------------------Whats new in Laravel 5.7---------------------
+//must verify middleware
+Auth::routes(['verify' => true]);
+
+Route::get('/mustverify', function(){
+    return "You are verified!!";
+})->middleware('verified');
+
+
+//-------------------Whats new in Laravel 5.6---------------------
+//-------------------Whats new in Laravel 5.5---------------------
