@@ -4,6 +4,7 @@ use App\Card;
 use App\Comment;
 use App\Events\UserReachedNegativePoints;
 use App\Jobs\DoSomething;
+use App\Newsletter;
 use App\PostCardSendingService;
 use App\User;
 use Barryvdh\DomPDF\PDF;
@@ -440,6 +441,13 @@ Route::get('cache', function(){
 Route::get('getcache', function(){
     return Cache::get('Hello');
 });
+
+//Mocking in testing
+Route::get('/newsletter', function(Newsletter $newsletter){
+    $newsletter->subscribeTo('members', auth()->user());
+
+    return "Done";
+})->middleware('auth');
 
 
 //-------------------Whats new in Laravel 5.7---------------------
