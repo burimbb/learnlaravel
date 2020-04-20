@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\UserRegistered;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -9,6 +10,14 @@ use Laravel\Passport\HasApiTokens;
 class User extends Authenticatable
 {
     use Notifiable, HasApiTokens;
+
+    protected static function boot(){
+        parent::boot();
+
+        static::created(function($user){
+            event(new UserRegistered($user));
+        });
+    }
 
     /**
      * The attributes that are mass assignable.

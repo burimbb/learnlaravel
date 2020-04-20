@@ -449,5 +449,11 @@ Route::get('/newsletter', function(Newsletter $newsletter){
     return "Done";
 })->middleware('auth');
 
+//event auto discovery
+Route::get('/register-a-user', function(){
+    $user = factory('App\User')->create();
+
+    return $user;
+});
 
 //-------------------Whats new in Laravel 5.7---------------------

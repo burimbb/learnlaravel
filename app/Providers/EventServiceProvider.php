@@ -37,7 +37,7 @@ class EventServiceProvider extends ServiceProvider
         //
     }
 
-    public function shouldDiscoverEvents(){
+    public function shouldDiscoverEvents(){//Use this method to activate auto discovery for events
         return true;
     }
 }
