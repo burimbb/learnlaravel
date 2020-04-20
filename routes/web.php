@@ -154,8 +154,7 @@ Route::get('/dispatchjob', function () {
 });
 
 Route::group(
-    [
-        'namespace' => '\Haruncpi\LaravelLogReader\Controllers'],
+    ['namespace' => '\Haruncpi\LaravelLogReader\Controllers'],
     function () {
         Route::get(config('laravel-log-reader.view_route_path'), 'LogReaderController@getIndex');
         Route::post(config('laravel-log-reader.view_route_path'), 'LogReaderController@postDelete');
@@ -395,23 +394,26 @@ Route::get('/want/passwordconfirm', function () {
 /* Auth::routes(['confirm' => false]); */
 /* Auth::routes(['reset' => false]); */
 
-Route::get('/withoutoptimizedquery', function(){
+Route::get('/withoutoptimizedquery', function () {
     return view('queries.index', [
         'users' => User::all(),
     ]);
 });
 
-Route::get('/optimizedquery', function(){
+Route::get('/optimizedquery', function () {
     return view('queries.optimized', [
-        'users' => User::with('comments')->get(),//optimized
+        'users' => User::with('comments')->get(), //optimized
     ]);
 });
 
-Route::get('/bigoptimizedquery', function(){
+Route::get('/bigoptimizedquery', function () {
+    /* DB::listen(function ($query) {
+        dump($query);
+    }); */
+
     return view('queries.bigoptimized', [
         'users' => User::query()
-                    ->addSelect(['last_comment' => 
-                        Comment::select('created_at')
+                    ->addSelect(['last_comment' => Comment::select('created_at')
                             ->whereColumn('commentable_id', 'users.id')
                             ->latest()
                             ->take(1)
@@ -421,7 +423,7 @@ Route::get('/bigoptimizedquery', function(){
 
 //-------------------Whats new in Laravel 5.8---------------------
 //Autodiscovery Policy
-Auth::loginUsingId(1);
+/* Auth::loginUsingId(1); //If you have no seed please remove this to add seeds */
 Route::get('/comments/{comment}', function (Comment $comment) {
     return $comment;
 })->middleware('can:view,comment');

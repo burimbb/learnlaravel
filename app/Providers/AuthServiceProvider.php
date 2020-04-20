@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         Passport::routes();
 
         /* Gate::guessPolicyNamesUsing(function($modelClassName){
-            return class_basename($modelClassName) . 'Authorizer';
+            return "App\\Policies\\" . class_basename($modelClassName) . 'Authorizer';
         }); */
     }
 }
