@@ -464,7 +464,9 @@ Route::get('/mustverify', function () {
     return 'You are verified!!';
 })->middleware('verified');
 
-//Added XRay for viewing blades on front end for bigger projects
+//Added XRay Package for viewing blades on front end for bigger projects
+
+//Dump server package
 
 //-------------------Whats new in Laravel 5.6---------------------
 //-------------------Whats new in Laravel 5.5---------------------
