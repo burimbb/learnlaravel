@@ -16,3 +16,8 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+Artisan::command('inspire1', function () { // error in console commands is better then older version of laravel
+    throw new Exception('Dummy exception!!');
+    $this->comment(Inspiring::quote());
+})->describe('Display an inspiring quote');
