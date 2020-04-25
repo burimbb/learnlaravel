@@ -3,6 +3,7 @@
 use App\Card;
 use App\Comment;
 use App\Events\UserReachedNegativePoints;
+use App\Http\Controllers\PayOrderController;
 use App\Jobs\DoSomething;
 use App\Newsletter;
 use App\PostCardSendingService;
@@ -467,6 +468,12 @@ Route::get('/mustverify', function () {
 //Added XRay Package for viewing blades on front end for bigger projects
 
 //Dump server package
+
+Route::get('/actions', function () {
+    return action([PayOrderController::class, 'store']); //new 5.7
+    
+    return action('PayOrderController@store'); //older
+});
 
 //-------------------Whats new in Laravel 5.6---------------------
 //-------------------Whats new in Laravel 5.5---------------------
