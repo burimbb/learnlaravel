@@ -12,10 +12,11 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable, HasApiTokens;
 
-    protected static function boot(){
+    protected static function boot()
+    {
         parent::boot();
 
-        static::created(function($user){
+        static::created(function ($user) {
             event(new UserRegistered($user));
         });
     }
@@ -44,7 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'date:Y-m-d',
     ];
 
     public function image()

@@ -475,5 +475,9 @@ Route::get('/actions', function () {
     return action('PayOrderController@store'); //older
 });
 
+Route::get('/casting', function () {
+    return User::find(2);
+});
+
 //-------------------Whats new in Laravel 5.6---------------------
 //-------------------Whats new in Laravel 5.5---------------------
