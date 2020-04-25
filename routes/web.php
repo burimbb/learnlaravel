@@ -471,7 +471,7 @@ Route::get('/mustverify', function () {
 
 Route::get('/actions', function () {
     return action([PayOrderController::class, 'store']); //new 5.7
-    
+
     return action('PayOrderController@store'); //older
 });
 
