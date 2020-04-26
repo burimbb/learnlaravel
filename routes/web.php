@@ -499,4 +499,6 @@ Route::get('/logoutOtherDevices', function(){
     return back();
 });
 
+//create api controllers ex.FooController
+
 //-------------------Whats new in Laravel 5.5---------------------
