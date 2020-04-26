@@ -303,6 +303,7 @@ Route::post('/form', function () {
 
 use Facades\App\Apple;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\LazyCollection;
 
 Route::get('/realtimefacades', function () {
@@ -477,6 +478,13 @@ Route::get('/actions', function () {
 
 Route::get('/casting', function () {
     return User::find(2);
+});
+
+Route::get('/slack-logging', function(){
+    Log::critical("Something has gone wrong!!. Check it out.");
+    Log::stack(['monthly, slack'])->critical("Monthly has gone wrong!!. Check it out.");
+
+    return "Logged!.";
 });
 
 //-------------------Whats new in Laravel 5.6---------------------
