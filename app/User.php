@@ -21,6 +21,8 @@ class User extends Authenticatable implements MustVerifyEmail
         });
     }
 
+    public $rate_limit = 4;
+
     /**
      * The attributes that are mass assignable.
      *

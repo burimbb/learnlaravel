@@ -476,6 +476,7 @@ Route::get('/actions', function () {
     return action('PayOrderController@store'); //older
 });
 
+//-------------------Whats new in Laravel 5.6---------------------
 Route::get('/casting', function () {
     return User::find(2);
 });
@@ -487,5 +488,9 @@ Route::get('/slack-logging', function(){
     return "Logged!.";
 });
 
-//-------------------Whats new in Laravel 5.6---------------------
+/* Auth::loginUsingId(1); */
+Route::middleware('throttle:rate_limit,1')->get('/dynamic-rate-limiting', function(){
+    return "Hello World!";
+});
+
 //-------------------Whats new in Laravel 5.5---------------------
