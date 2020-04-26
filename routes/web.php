@@ -493,4 +493,10 @@ Route::middleware('throttle:rate_limit,1')->get('/dynamic-rate-limiting', functi
     return "Hello World!";
 });
 
+Route::get('/logoutOtherDevices', function(){
+    Auth::logoutOtherDevices('admin1234');
+
+    return back();
+});
+
 //-------------------Whats new in Laravel 5.5---------------------
