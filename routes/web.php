@@ -5,6 +5,7 @@ use App\Comment;
 use App\Events\UserReachedNegativePoints;
 use App\Exceptions\PostIsPrivate;
 use App\Http\Controllers\PayOrderController;
+use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\Jobs\DoSomething;
 use App\Mail\OrderShipped;
@@ -602,6 +603,7 @@ Route::get('/api-model-resource', function(){
     return new UserResource($user);
 });
 
+//UserResource extends JsonResource
 Route::get('/api-collection-resource', function(){
     $users = User::with(['comments', 'achievments'])->get();
 
@@ -612,6 +614,13 @@ Route::get('/apipaginateresource', function(){
     $users = User::with(['comments', 'achievments'])->paginate(3);
 
     return UserResource::collection($users);
+});
+
+//now UserCollection extends ResourceCollection
+Route::get('/apipaginateresourcecollection', function(){
+    $users = User::with(['comments', 'achievments'])->paginate(3);
+
+    return new UserCollection($users);
 });
 
 //-------------------Whats new in Laravel---------------------

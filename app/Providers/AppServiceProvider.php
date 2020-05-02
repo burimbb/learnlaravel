@@ -7,6 +7,7 @@ use App\Billing\CreditPaymentGateway;
 use App\Billing\PaymentGatewayContract;
 use App\Mixins\StrMixins;
 use App\PostCardSendingService;
+use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
@@ -49,6 +50,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('hellomember', function(){
             return true;
         });
+
+        //changed from data => [] to items => []
+        Resource::wrap('items');
     }
 
     /**
