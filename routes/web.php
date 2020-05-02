@@ -502,6 +502,8 @@ Route::get('/logoutOtherDevices', function () {
 //create api controllers ex.FooController
 
 //-------------------Whats new in Laravel 5.5---------------------
+
 //validate data from request $validated = $request->validate();
+//added migrate:fresh drop all tables without rollback and rerun migration
 
 //-------------------Whats new in Laravel---------------------
