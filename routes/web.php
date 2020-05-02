@@ -573,4 +573,12 @@ Route::get('/custom-blade-directive', function(){
     return view('custom-blade');
 });
 
+//commands autodiscovery
+
+Route::get('/tapfunction', function(){
+    return tap(1, function($number){
+        return $number == 2;
+    });
+});
+
 //-------------------Whats new in Laravel---------------------
