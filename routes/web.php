@@ -553,4 +553,18 @@ Route::post('/testrule', function(Request $request){
     return back();
 });
 
+//dump on collections
+Route::get('/dumpcollection', function(){
+    $users = User::all();
+
+    return $users->shuffle()
+        ->dump()
+        ->filter(function($user){
+            return $user->id < 10;
+        })
+        ->dump()
+        ->pluck('name')
+        ->dump();
+});
+
 //-------------------Whats new in Laravel---------------------
