@@ -5,6 +5,7 @@ use App\Comment;
 use App\Events\UserReachedNegativePoints;
 use App\Http\Controllers\PayOrderController;
 use App\Jobs\DoSomething;
+use App\Mail\OrderShipped;
 use App\Newsletter;
 use App\PostCardSendingService;
 use App\User;
@@ -302,6 +303,7 @@ Route::post('/form', function () {
 })->name('form.post');
 
 use Facades\App\Apple;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\LazyCollection;
@@ -514,6 +516,24 @@ Route::get('/laracast-flash', function () {
     /* dd(session()->all()); */
 
     return view('flashexample');
+});
+
+//if you want to make a class that renders only need to implement renderable
+class TestRenderable implements Renderable
+{
+    /**
+     * Create new public function
+     */
+    public function render()
+    {
+        return '<h2>Hello World</h2>';
+    }
+}
+
+Route::get('/testmailable', function () {
+    return new TestRenderable;
+
+    return new OrderShipped(User::first());
 });
 
 //-------------------Whats new in Laravel---------------------
