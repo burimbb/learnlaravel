@@ -567,4 +567,10 @@ Route::get('/dumpcollection', function(){
         ->dump();
 });
 
+//make factories for generating data for models
+
+Route::get('/custom-blade-directive', function(){
+    return view('custom-blade');
+});
+
 //-------------------Whats new in Laravel---------------------

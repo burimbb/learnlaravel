@@ -7,6 +7,7 @@ use App\Billing\CreditPaymentGateway;
 use App\Billing\PaymentGatewayContract;
 use App\Mixins\StrMixins;
 use App\PostCardSendingService;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -43,5 +44,9 @@ class AppServiceProvider extends ServiceProvider
         }); */
 
         Str::mixin(new StrMixins());
+
+        Blade::if('hellomember', function(){
+            return true;
+        });
     }
 }
