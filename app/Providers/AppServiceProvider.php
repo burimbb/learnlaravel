@@ -8,6 +8,7 @@ use App\Billing\PaymentGatewayContract;
 use App\Mixins\StrMixins;
 use App\PostCardSendingService;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -48,5 +49,13 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('hellomember', function(){
             return true;
         });
+    }
+
+    /**
+     * Constructor of this class AppServiceProvider
+     */
+    public function __destruct()
+    {
+        Log::critical("Destructed App Service Provider");
     }
 }

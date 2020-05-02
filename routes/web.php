@@ -592,4 +592,8 @@ Route::get('/bubleexception', function(){
     throw new PostIsPrivate();
 });
 
+//optional function optional();
+
+
+
 //-------------------Whats new in Laravel---------------------
