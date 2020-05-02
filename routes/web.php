@@ -3,6 +3,7 @@
 use App\Card;
 use App\Comment;
 use App\Events\UserReachedNegativePoints;
+use App\Exceptions\PostIsPrivate;
 use App\Http\Controllers\PayOrderController;
 use App\Jobs\DoSomething;
 use App\Mail\OrderShipped;
@@ -586,5 +587,9 @@ Route::get('/tapfunction', function(){
 //custom route helpers
 Route::redirect('/me', '/home');
 Route::view('/cblade', 'custom-blade');
+
+Route::get('/bubleexception', function(){
+    throw new PostIsPrivate();
+});
 
 //-------------------Whats new in Laravel---------------------
