@@ -481,19 +481,19 @@ Route::get('/casting', function () {
     return User::find(2);
 });
 
-Route::get('/slack-logging', function(){
-    Log::critical("Something has gone wrong!!. Check it out.");
-    Log::stack(['monthly, slack'])->critical("Monthly has gone wrong!!. Check it out.");
+Route::get('/slack-logging', function () {
+    Log::critical('Something has gone wrong!!. Check it out.');
+    Log::stack(['monthly, slack'])->critical('Monthly has gone wrong!!. Check it out.');
 
-    return "Logged!.";
+    return 'Logged!.';
 });
 
 /* Auth::loginUsingId(1); */
-Route::middleware('throttle:rate_limit,1')->get('/dynamic-rate-limiting', function(){
-    return "Hello World!";
+Route::middleware('throttle:rate_limit,1')->get('/dynamic-rate-limiting', function () {
+    return 'Hello World!';
 });
 
-Route::get('/logoutOtherDevices', function(){
+Route::get('/logoutOtherDevices', function () {
     Auth::logoutOtherDevices('admin1234');
 
     return back();
@@ -502,3 +502,6 @@ Route::get('/logoutOtherDevices', function(){
 //create api controllers ex.FooController
 
 //-------------------Whats new in Laravel 5.5---------------------
+//validate data from request $validated = $request->validate();
+
+//-------------------Whats new in Laravel---------------------
