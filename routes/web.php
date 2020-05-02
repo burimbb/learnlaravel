@@ -506,4 +506,6 @@ Route::get('/logoutOtherDevices', function () {
 //validate data from request $validated = $request->validate();
 //added migrate:fresh drop all tables without rollback and rerun migration
 
+//Laravel package autodisovery serviceproviders and aliases
+
 //-------------------Whats new in Laravel---------------------
