@@ -508,4 +508,12 @@ Route::get('/logoutOtherDevices', function () {
 
 //Laravel package autodisovery serviceproviders and aliases
 
+Route::get('/laracast-flash', function () {
+    flash('Hello world qkemii');
+
+    /* dd(session()->all()); */
+
+    return view('flashexample');
+});
+
 //-------------------Whats new in Laravel---------------------
