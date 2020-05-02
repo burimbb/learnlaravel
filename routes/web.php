@@ -5,6 +5,7 @@ use App\Comment;
 use App\Events\UserReachedNegativePoints;
 use App\Exceptions\PostIsPrivate;
 use App\Http\Controllers\PayOrderController;
+use App\Http\Resources\UserResource;
 use App\Jobs\DoSomething;
 use App\Mail\OrderShipped;
 use App\Newsletter;
@@ -594,6 +595,23 @@ Route::get('/bubleexception', function(){
 
 //optional function optional();
 
+//api resources
+Route::get('/api-model-resource', function(){
+    $user = User::with('comments')->find(1);
 
+    return new UserResource($user);
+});
+
+Route::get('/api-collection-resource', function(){
+    $users = User::with(['comments', 'achievments'])->get();
+
+    return UserResource::collection($users);
+});
+
+Route::get('/apipaginateresource', function(){
+    $users = User::with(['comments', 'achievments'])->paginate(3);
+
+    return UserResource::collection($users);
+});
 
 //-------------------Whats new in Laravel---------------------
