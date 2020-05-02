@@ -581,4 +581,10 @@ Route::get('/tapfunction', function(){
     });
 });
 
+//@auth and @guest blade directive added
+
+//custom route helpers
+Route::redirect('/me', '/home');
+Route::view('/cblade', 'custom-blade');
+
 //-------------------Whats new in Laravel---------------------
