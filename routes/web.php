@@ -8,6 +8,7 @@ use App\Jobs\DoSomething;
 use App\Mail\OrderShipped;
 use App\Newsletter;
 use App\PostCardSendingService;
+use App\Rules\ThreeCharLength;
 use App\User;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -534,6 +535,22 @@ Route::get('/testmailable', function () {
     return new TestRenderable;
 
     return new OrderShipped(User::first());
+});
+
+//custom rules
+Route::get('/testrule', function(){
+    return view('testrule');
+});
+Route::post('/testrule', function(Request $request){
+    /* $request->validate([
+        'name' => 'required|min:3'
+    ]); */
+    
+    $request->validate([
+        'name' => ['required', new ThreeCharLength]
+    ]);
+
+    return back();
 });
 
 //-------------------Whats new in Laravel---------------------
