@@ -541,14 +541,14 @@ Route::get('/testmailable', function () {
 });
 
 //custom rules
-Route::get('/testrule', function(){
+Route::get('/testrule', function () {
     return view('testrule');
 });
-Route::post('/testrule', function(Request $request){
+Route::post('/testrule', function (Request $request) {
     /* $request->validate([
         'name' => 'required|min:3'
     ]); */
-    
+
     $request->validate([
         'name' => ['required', new ThreeCharLength]
     ]);
@@ -557,12 +557,12 @@ Route::post('/testrule', function(Request $request){
 });
 
 //dump on collections
-Route::get('/dumpcollection', function(){
+Route::get('/dumpcollection', function () {
     $users = User::all();
 
     return $users->shuffle()
         ->dump()
-        ->filter(function($user){
+        ->filter(function ($user) {
             return $user->id < 10;
         })
         ->dump()
@@ -572,14 +572,14 @@ Route::get('/dumpcollection', function(){
 
 //make factories for generating data for models
 
-Route::get('/custom-blade-directive', function(){
+Route::get('/custom-blade-directive', function () {
     return view('custom-blade');
 });
 
 //commands autodiscovery
 
-Route::get('/tapfunction', function(){
-    return tap(1, function($number){
+Route::get('/tapfunction', function () {
+    return tap(1, function ($number) {
         return $number == 2;
     });
 });
@@ -590,37 +590,39 @@ Route::get('/tapfunction', function(){
 Route::redirect('/me', '/home');
 Route::view('/cblade', 'custom-blade');
 
-Route::get('/bubleexception', function(){
+Route::get('/bubleexception', function () {
     throw new PostIsPrivate();
 });
 
 //optional function optional();
 
 //api resources
-Route::get('/api-model-resource', function(){
+Route::get('/api-model-resource', function () {
     $user = User::with('comments')->find(1);
 
     return new UserResource($user);
 });
 
 //UserResource extends JsonResource
-Route::get('/api-collection-resource', function(){
+Route::get('/api-collection-resource', function () {
     $users = User::with(['comments', 'achievments'])->get();
 
     return UserResource::collection($users);
 });
 
-Route::get('/apipaginateresource', function(){
+Route::get('/apipaginateresource', function () {
     $users = User::with(['comments', 'achievments'])->paginate(3);
 
     return UserResource::collection($users);
 });
 
 //now UserCollection extends ResourceCollection
-Route::get('/apipaginateresourcecollection', function(){
+Route::get('/apipaginateresourcecollection', function () {
     $users = User::with(['comments', 'achievments'])->paginate(3);
 
     return new UserCollection($users);
 });
+
+//-------------------Laracasts---------------------
 
 //-------------------Whats new in Laravel---------------------

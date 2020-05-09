@@ -36,5 +36,7 @@ class DatabaseSeeder extends Seeder
                 'taggable_type' => 'App\Post'
             ]);
         }
+
+        factory('App\Department', 20)->create();
     }
 }
