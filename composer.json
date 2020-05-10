@@ -12,6 +12,7 @@
         "ext-posix": "*",
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-dompdf": "^0.8.5",
+        "carbon-cli/carbon-cli": "^1.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.5",
         "haruncpi/laravel-log-reader": "^1.0",

@@ -623,6 +623,8 @@ Route::get('/apipaginateresourcecollection', function () {
     return new UserCollection($users);
 });
 
-//-------------------Laracasts---------------------
+//-------------------Laracasts Laravel 5 Fundamentals---------------------
+//learn composer and scaffolding laravel 5.0
+
 
 //-------------------Whats new in Laravel---------------------
