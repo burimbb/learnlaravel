@@ -625,6 +625,6 @@ Route::get('/apipaginateresourcecollection', function () {
 
 //-------------------Laracasts Laravel 5 Fundamentals---------------------
 //learn composer and scaffolding laravel 5.0
-
+//vagrant and homestead
 
 //-------------------Whats new in Laravel---------------------
