@@ -2,6 +2,7 @@
 
 use App\Card;
 use App\Comment;
+use App\Department;
 use App\Events\UserReachedNegativePoints;
 use App\Exceptions\PostIsPrivate;
 use App\Http\Controllers\PayOrderController;
@@ -626,5 +627,13 @@ Route::get('/apipaginateresourcecollection', function () {
 //-------------------Laracasts Laravel 5 Fundamentals---------------------
 //learn composer and scaffolding laravel 5.0
 //vagrant and homestead
+
+Route::get('/setmodelattributes', function () {
+    return factory('App\Department')->create();
+});
+
+Route::get('/getmodelattributes', function () {
+    return Department::latest()->first();
+});
 
 //-------------------Whats new in Laravel---------------------

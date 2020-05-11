@@ -12,4 +12,20 @@ class Department extends Model
     {
        return $this->hasMany('App\Lecturer');
     }
+    
+    /**
+     * Create new public function
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = '['. rand(0,1000) .']-'.$value;
+    }
+
+    /**
+     * Create new public function
+     */
+    public function getNameAttribute($value)
+    {
+        return '[Getting]-'.$value;
+    }
 }
