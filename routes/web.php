@@ -640,6 +640,8 @@ Route::get('/getmodelattributes', function () {
 Route::get('/queryscopes', function () {
     dump(Post::latest()->get());
     dump(Post::latest()->active(0)->get());
+    dump(Post::latest()->publishedAfter(now())->get());
+    dump(Post::latest()->publishedBefore(now())->get());
 });
 
 //-------------------Whats new in Laravel---------------------

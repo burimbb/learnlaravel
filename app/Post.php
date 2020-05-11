@@ -58,4 +58,20 @@ class Post extends Model
     {
         $query->where('active', $default);
     }
+    
+    /**
+     * Create new public function
+     */
+    public function scopePublishedAfter($query, $date)
+    {
+        $query->where('created_at', '>=', $date);
+    }
+    
+    /**
+     * Create new public function
+     */
+    public function scopePublishedBefore($query, $date)
+    {
+        $query->where('created_at', '<=', $date);
+    }
 }
