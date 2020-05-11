@@ -50,4 +50,12 @@ class Post extends Model
             ->withPivot(['before', 'after'])
             ->withTimestamps();
     }
+
+    /**
+     * Create new public function
+     */
+    public function scopeActive($query, $default = 1)
+    {
+        $query->where('active', $default);
+    }
 }

@@ -11,6 +11,7 @@ use App\Http\Resources\UserResource;
 use App\Jobs\DoSomething;
 use App\Mail\OrderShipped;
 use App\Newsletter;
+use App\Post;
 use App\PostCardSendingService;
 use App\Rules\ThreeCharLength;
 use App\User;
@@ -634,6 +635,11 @@ Route::get('/setmodelattributes', function () {
 
 Route::get('/getmodelattributes', function () {
     return Department::latest()->first();
+});
+
+Route::get('/queryscopes', function () {
+    dump(Post::latest()->get());
+    dump(Post::latest()->active(0)->get());
 });
 
 //-------------------Whats new in Laravel---------------------
