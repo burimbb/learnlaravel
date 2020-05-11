@@ -644,4 +644,17 @@ Route::get('/queryscopes', function () {
     dump(Post::latest()->publishedBefore(now())->get());
 });
 
+Route::get('/getdateattribute', function () {
+    dump(Post::latest()->first()->created_at);
+    dump(Post::latest()->first()->created_at->addHour());
+    dump(Post::latest()->first()->created_at->addDays(4));
+    dump(Post::latest()->first()->created_at->diffForHumans());
+});
+
+Route::get('/customdateattribute', function () {
+    $post = factory('App\Post')->create();
+    dump($post->published_at);
+});
+
+
 //-------------------Whats new in Laravel---------------------

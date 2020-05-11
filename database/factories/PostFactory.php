@@ -9,6 +9,7 @@ $factory->define(Post::class, function (Faker $faker) {
     return [
         'title' => $faker->paragraph(2),
         'body' => $faker->paragraph(10),
-        'active' => $faker->boolean()
+        'active' => $faker->boolean(),
+        'published_at' => $faker->dateTime(),
     ];
 });

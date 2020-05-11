@@ -15,7 +15,9 @@ class Post extends Model
         });
     }
 
-    protected $fillable = ['title', 'body', 'active'];
+    protected $fillable = ['title', 'body', 'active', 'published_at'];
+
+    protected $dates = ['published_at'];
 
     public function image()
     {
