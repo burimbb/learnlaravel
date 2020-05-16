@@ -2,19 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\UserRepositoryInterface;
-use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UploadFileController extends Controller
 {
-    protected $userRepository;
-
-    public function __construct(UserRepositoryInterface $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return $this->userRepository->getStartsWith('name', 'A');
+        //
     }
 
     /**
@@ -43,27 +34,27 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return $this->userRepository->findById($id);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         //
     }
@@ -72,23 +63,21 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $userId)
+    public function update(Request $request, $id)
     {
-        $user = $this->userRepository->findById($userId);
-        $user->update(request()->only('name'));
-        return redirect('/users/' . $userId);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
         //
     }

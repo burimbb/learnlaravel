@@ -1,0 +1,95 @@
+[2020-05-16 10:38:41] local.ERROR: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90935a4c-d0cd-434c-8741-0d875336e8f3, {"command":"make:controller","exit_code":0,"arguments":{"command":"make:controller","name":"UploadFileController"},"options":{"api":false,"force":false,"invokable":false,"model":null,"parent":null,"resource":true,"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-KHRC24J"}, 2020-05-16 10:38:15, ?, command, 90935a4c-bd45-4914-990c-2942de8e5db8)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90935a4c-d0cd-434c-8741-0d875336e8f3, {\"command\":\"make:controller\",\"exit_code\":0,\"arguments\":{\"command\":\"make:controller\",\"name\":\"UploadFileController\"},\"options\":{\"api\":false,\"force\":false,\"invokable\":false,\"model\":null,\"parent\":null,\"resource\":true,\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-KHRC24J\"}, 2020-05-16 10:38:15, ?, command, 90935a4c-bd45-4914-990c-2942de8e5db8)) at C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2651): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\Telescope.php(567): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1067): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\xampp\\htdocs\\LearnLaravel\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#18 {main}
+
+[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ at C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=192....', 'homestead', 'secret', Array)
+#1 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=192....', 'homestead', 'secret', Array)
+#2 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=192....', Array, Array)
+#3 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2651): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\Telescope.php(567): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1067): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\xampp\\htdocs\\LearnLaravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\xampp\\htdocs\\LearnLaravel\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#26 {main}
+"} 
+[2020-05-16 10:38:42] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:41:59] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:42:02] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:42:33] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:42:35] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:42:40] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:02] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:04] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:17] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:21] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:21] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:25] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:43:28] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:47:17] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:47:22] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:47:22] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:47:23] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:47:36] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:47:43] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:19] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:21] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:32] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:32] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:34] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:48] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:55] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:55] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:48:57] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:49:31] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:49:37] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:49:39] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:49:43] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:49:54] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:55:11] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:55:18] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:55:47] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:55:55] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:55:55] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:56:00] local.CRITICAL: Destructed App Service Provider  
+[2020-05-16 10:56:03] local.CRITICAL: Destructed App Service Provider  

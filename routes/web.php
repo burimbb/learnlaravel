@@ -656,5 +656,10 @@ Route::get('/customdateattribute', function () {
     dump($post->published_at);
 });
 
-
 //-------------------Whats new in Laravel---------------------
+
+Route::get('/multiple-files-upload', function () {
+    return view('uploads.multiple');
+});
+
+Route::post('/upload/select-files', 'UploadFileController@store');;

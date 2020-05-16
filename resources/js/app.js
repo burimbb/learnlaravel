@@ -34,6 +34,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('series-component', require('./components/SeriesComponent.vue').default);
 Vue.component('support-button', require('./components/SupportButton.vue').default);
 
+Vue.component('multiple-files', require('./components/MultipleFiles.vue').default);
+
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue').default
