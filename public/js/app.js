@@ -2012,7 +2012,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       myCount: 10
     };
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(['count'])),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    aliasCount: 'count'
+  })),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['increment', 'decrement']))
 });
 
@@ -43085,7 +43087,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", [_vm._v("Local Count: " + _vm._s(_vm.myCount))]),
     _vm._v(" "),
-    _c("p", [_vm._v("Global Count: " + _vm._s(_vm.count))]),
+    _c("p", [_vm._v("Global Count: " + _vm._s(_vm.aliasCount))]),
     _vm._v(" "),
     _c(
       "button",

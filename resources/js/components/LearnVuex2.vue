@@ -5,7 +5,7 @@
         </div>
 
         <p>Local Count: {{myCount}}</p>
-        <p>Global Count: {{count}}</p>
+        <p>Global Count: {{aliasCount}}</p>
 
         <button class="btn btn-secondary" @click="increment">Increase</button>
         <button class="btn btn-danger" @click="decrement">Decrease</button>
@@ -23,7 +23,9 @@ export default {
     },
 
     computed:{
-        ...mapState(['count']),
+        ...mapState({
+            aliasCount: 'count'
+        }),
     },
 
     methods:{
