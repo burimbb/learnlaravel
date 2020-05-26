@@ -16,6 +16,24 @@ import VModal from 'vue-js-modal';
 
 Vue.use(VModal, { dialog: true });
 
+import Vuex from 'vuex';
+Vue.use(Vuex);
+
+var store = new Vuex.Store({
+    state: {
+        count: 100,
+    },
+
+    mutations: {
+        increment(state){
+            state.count++;
+        },
+        decrement(state){
+            state.count--;
+        },
+    }
+});
+
 /* import Turbolinks from 'turbolinks';
 Turbolinks.start(); */
 
@@ -35,6 +53,9 @@ Vue.component('series-component', require('./components/SeriesComponent.vue').de
 Vue.component('support-button', require('./components/SupportButton.vue').default);
 
 Vue.component('multiple-files', require('./components/MultipleFiles.vue').default);
+
+Vue.component('learn-vuex-1', require('./components/LearnVuex1.vue').default);
+Vue.component('learn-vuex-2', require('./components/LearnVuex2.vue').default);
 
 Vue.component(
     'passport-clients',
@@ -59,4 +80,5 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
+    store: store
 });

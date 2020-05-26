@@ -663,3 +663,7 @@ Route::get('/multiple-files-upload', function () {
 });
 
 Route::post('/upload/select-files', 'UploadFileController@store');;
+
+Route::get('/learn/vuex', function () {
+    return view('learnvuex');
+});
