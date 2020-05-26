@@ -19,20 +19,7 @@ Vue.use(VModal, { dialog: true });
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
-var store = new Vuex.Store({
-    state: {
-        count: 100,
-    },
-
-    mutations: {
-        increment(state){
-            state.count++;
-        },
-        decrement(state){
-            state.count--;
-        },
-    }
-});
+import store from './store';
 
 /* import Turbolinks from 'turbolinks';
 Turbolinks.start(); */
@@ -80,5 +67,5 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
-    store: store
+    store: new Vuex.Store(store)
 });
