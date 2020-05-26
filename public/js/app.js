@@ -2005,15 +2005,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      myCount: 10
+      myCount: 5
     };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
-    aliasCount: 'count'
+    aliasCount: 'count',
+    computedSum: function computedSum(state) {
+      return state.count + this.myCount;
+    }
   })),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['increment', 'decrement']))
 });
@@ -43082,12 +43087,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-md-6" }, [
     _c("div", { staticClass: "card card-title" }, [
-      _vm._v("\n        Component 1\n    ")
+      _vm._v("\n        Component 2\n    ")
     ]),
     _vm._v(" "),
     _c("p", [_vm._v("Local Count: " + _vm._s(_vm.myCount))]),
     _vm._v(" "),
     _c("p", [_vm._v("Global Count: " + _vm._s(_vm.aliasCount))]),
+    _vm._v(" "),
+    _c("p", [_vm._v("Sum: " + _vm._s(_vm.computedSum))]),
     _vm._v(" "),
     _c(
       "button",
