@@ -44,6 +44,7 @@ Vue.component('multiple-files', require('./components/MultipleFiles.vue').defaul
 Vue.component('learn-vuex-1', require('./components/LearnVuex1.vue').default);
 Vue.component('learn-vuex-2', require('./components/LearnVuex2.vue').default);
 Vue.component('another-vuex', require('./components/AnotherVuex.vue').default);
+Vue.component('countdown', require('./components/Countdown.vue').default);
 
 Vue.component(
     'passport-clients',

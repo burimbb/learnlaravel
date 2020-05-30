@@ -667,3 +667,7 @@ Route::post('/upload/select-files', 'UploadFileController@store');;
 Route::get('/learn/vuex', function () {
     return view('learnvuex');
 });
+
+Route::get('/countdown', function(){
+    return view('countdown');
+});
