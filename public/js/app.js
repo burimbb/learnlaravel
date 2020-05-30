@@ -1930,6 +1930,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1939,7 +1941,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
     globalcounter: 'count'
-  }))
+  }), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['sqrt'])),
+  methods: {}
 });
 
 /***/ }),
@@ -2007,6 +2010,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2015,7 +2019,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(['count'])),
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['increment', 'decrement']))
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['increment', 'decrement']), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    incrementAction: 'increment'
+  }))
 });
 
 /***/ }),
@@ -43053,7 +43059,11 @@ var render = function() {
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
-      _c("p", { domProps: { textContent: _vm._s(_vm.globalcounter) } })
+      _c("p", { domProps: { textContent: _vm._s(_vm.globalcounter) } }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", [_vm._v("Sqrt of count: " + _vm._s(_vm.sqrt))])
     ])
   ])
 }
@@ -43139,6 +43149,12 @@ var render = function() {
       "button",
       { staticClass: "btn btn-secondary", on: { click: _vm.increment } },
       [_vm._v("Increase")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      { staticClass: "btn btn-secondary", on: { click: _vm.incrementAction } },
+      [_vm._v("Increase With Action")]
     ),
     _vm._v(" "),
     _c(
@@ -59171,12 +59187,25 @@ __webpack_require__.r(__webpack_exports__);
   state: {
     count: 100
   },
+  getters: {
+    sqrt: function sqrt(state) {
+      return Math.sqrt(state.count);
+    }
+  },
   mutations: {
+    //syncronise
     increment: function increment(state) {
       state.count++;
     },
     decrement: function decrement(state) {
       state.count--;
+    }
+  },
+  actions: {
+    increment: function increment(context) {
+      setTimeout(function () {
+        context.commit('increment');
+      }, 3000);
     }
   }
 });

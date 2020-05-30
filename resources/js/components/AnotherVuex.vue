@@ -9,12 +9,14 @@
             <p>Store</p>
             <br>
             <p v-text="globalcounter"></p>
+            <br>
+            <p>Sqrt of count: {{sqrt}}</p>
         </div>
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
     data(){
@@ -26,7 +28,12 @@ export default {
     computed: {
         ...mapState({
             globalcounter: 'count'
-        })
+        }),
+
+        ...mapGetters(['sqrt']),
+    },
+ 
+    methods:{
     }
 }
 </script>

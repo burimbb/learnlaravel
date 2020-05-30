@@ -3,12 +3,26 @@ export default{
         count: 100,
     },
 
-    mutations: {
+    getters: {
+        sqrt(state){
+            return Math.sqrt(state.count);
+        }
+    },
+
+    mutations: {//syncronise
         increment(state){
             state.count++;
         },
         decrement(state){
             state.count--;
+        },
+    },
+
+    actions: {
+        increment(context){
+            setTimeout(()=> {
+                context.commit('increment');
+            }, 3000);
         },
     }
 }
