@@ -19,6 +19,11 @@ Vue.use(VModal, { dialog: true });
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
+import routes from './routes';
+
 import store from './store';
 
 /* import Turbolinks from 'turbolinks';
@@ -70,5 +75,6 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
-    store: new Vuex.Store(store)
+    store: new Vuex.Store(store),
+    router: new VueRouter(routes)
 });

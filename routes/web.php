@@ -675,3 +675,7 @@ Route::get('/countdown', function () {
 Route::get('/mymodal', function () {
     return view('mymodal');
 });
+
+Route::get('/tabs/withrouter', function(){
+    return view('tabswithrouter');
+});
