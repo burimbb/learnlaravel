@@ -668,6 +668,10 @@ Route::get('/learn/vuex', function () {
     return view('learnvuex');
 });
 
-Route::get('/countdown', function(){
+Route::get('/countdown', function () {
     return view('countdown');
+});
+
+Route::get('/mymodal', function () {
+    return view('mymodal');
 });
