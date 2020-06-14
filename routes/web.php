@@ -679,3 +679,7 @@ Route::get('/mymodal', function () {
 Route::get('/tabs/withrouter', function(){
     return view('tabswithrouter');
 });
+
+Route::get('/tabsexample', function(){
+    return view('tabs/index');
+});

@@ -52,6 +52,9 @@ Vue.component('another-vuex', require('./components/AnotherVuex.vue').default);
 Vue.component('countdown', require('./components/Countdown.vue').default);
 Vue.component('Join', require('./components/Join.vue').default);
 
+Vue.component('TabList', require('./components/tabs/TabList.vue').default);
+Vue.component('TabComponent', require('./components/tabs/TabComponent.vue').default);
+
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue').default
