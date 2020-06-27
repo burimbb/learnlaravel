@@ -66499,7 +66499,15 @@ var render = function() {
   return _c(
     "div",
     {
-      class: ["tab-pane fade show pt-3", { active: _vm.isActive }],
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.isActive,
+          expression: "isActive"
+        }
+      ],
+      class: ["tab-pane fade show pt-3 active"],
       attrs: { id: "home", role: "tabpanel", "aria-labelledby": "home-tab" }
     },
     [_vm._t("default")],

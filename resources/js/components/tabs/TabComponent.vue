@@ -1,5 +1,5 @@
 <template>
-    <div :class="['tab-pane fade show pt-3', {'active': isActive}]" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div :class="['tab-pane fade show pt-3 active']" id="home" role="tabpanel" aria-labelledby="home-tab" v-show="isActive">
         <slot></slot>
     </div>
 </template>
