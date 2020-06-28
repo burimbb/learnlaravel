@@ -676,10 +676,14 @@ Route::get('/mymodal', function () {
     return view('mymodal');
 });
 
-Route::get('/tabs/withrouter', function(){
+Route::get('/tabs/withrouter', function () {
     return view('tabswithrouter');
 });
 
-Route::get('/tabsexample', function(){
+Route::get('/tabsexample', function () {
     return view('tabs/index');
+});
+
+Route::get('/components/communication', function () {
+    return view('components/communication');
 });
