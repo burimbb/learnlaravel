@@ -2046,11 +2046,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     entered: function entered() {
-      Event.$emit('input-submited', this.data);
+      /* Event.$emit('input-submited', this.data); */
+      Event.fire('input-submited', this.data);
     }
   },
   created: function created() {
-    Event.$on('input-submited', function (text) {
+    /* Event.$on('input-submited', (text) => { alert("Input has been submited! "+text); }); */
+    Event.listen('input-submited', function (text) {
       alert("Input has been submited! " + text);
     });
   }
@@ -82975,6 +82977,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -83023,7 +83031,32 @@ Vue.component('passport-clients', __webpack_require__(/*! ./components/passport/
 Vue.component('passport-authorized-clients', __webpack_require__(/*! ./components/passport/AuthorizedClients.vue */ "./resources/js/components/passport/AuthorizedClients.vue")["default"]);
 Vue.component('passport-personal-access-tokens', __webpack_require__(/*! ./components/passport/PersonalAccessTokens.vue */ "./resources/js/components/passport/PersonalAccessTokens.vue")["default"]);
 Vue.component('EventDispatch', __webpack_require__(/*! ./components/EventDispatch.vue */ "./resources/js/components/EventDispatch.vue")["default"]);
-window.Event = new Vue();
+/* window.Event = new Vue(); */
+
+window.Event = new (
+/*#__PURE__*/
+function () {
+  function _class() {
+    _classCallCheck(this, _class);
+
+    this.vue = new Vue();
+  }
+
+  _createClass(_class, [{
+    key: "fire",
+    value: function fire(event) {
+      var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      this.vue.$emit(event, data);
+    }
+  }, {
+    key: "listen",
+    value: function listen(event, callback) {
+      this.vue.$on(event, callback);
+    }
+  }]);
+
+  return _class;
+}())();
 /**
  * Next, we will create a fresh Vue application instance and attach it to
 * the page. Then, you may begin adding components to this application

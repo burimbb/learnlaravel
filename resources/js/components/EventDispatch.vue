@@ -14,12 +14,14 @@ export default {
 
     methods: {
         entered(){
-            Event.$emit('input-submited', this.data);
+            /* Event.$emit('input-submited', this.data); */
+            Event.fire('input-submited', this.data);
         }
     },
 
     created(){
-        Event.$on('input-submited', (text) => { alert("Input has been submited! "+text); });
+        /* Event.$on('input-submited', (text) => { alert("Input has been submited! "+text); }); */
+        Event.listen('input-submited', (text) => { alert("Input has been submited! "+text); });
     }
 }
 </script>

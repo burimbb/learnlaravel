@@ -72,8 +72,22 @@ Vue.component(
     
     Vue.component('EventDispatch', require('./components/EventDispatch.vue').default);
     
-    window.Event = new Vue();
+    /* window.Event = new Vue(); */
     
+    window.Event = new class {
+        constructor(){
+            this.vue = new Vue();
+        }
+
+        fire(event, data = null){
+            this.vue.$emit(event, data);
+        }
+
+        listen(event, callback){
+            this.vue.$on(event, callback);
+        }
+    };
+
     /**
      * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
