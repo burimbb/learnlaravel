@@ -71,6 +71,7 @@ Vue.component(
     );
     
     Vue.component('EventDispatch', require('./components/EventDispatch.vue').default);
+    Vue.component('MyForm', require('./components/MyForm.vue').default);
     
     /* window.Event = new Vue(); */
     

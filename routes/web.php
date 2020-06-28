@@ -212,7 +212,7 @@ Route::get('/secondcommit', function () {
     return 'hello from branching';
 });
 
-Route::get('/tasks', function () {
+Route::get('/gettasks', function () {
     return view('tasks');
 });
 
@@ -684,6 +684,15 @@ Route::get('/tabsexample', function () {
     return view('tabs/index');
 });
 
+//custom event on and listen
 Route::get('/components/communication', function () {
     return view('components/communication');
+});
+
+//single used components in vue with inline template 
+
+Route::resource('/tasks', 'TaskController');
+
+Route::get('/form/withvalidation', function(){
+    return view('/forms/withvalidation');
 });
