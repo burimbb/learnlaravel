@@ -696,3 +696,7 @@ Route::resource('/tasks', 'TaskController');
 Route::get('/form/withvalidation', function(){
     return view('/forms/withvalidation');
 });
+
+Route::get('/coupon', function(){
+    return view('/coupon');
+});
