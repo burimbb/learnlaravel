@@ -1,0 +1,13 @@
+.main-color{
+    color: #31994c;
+}
+.bg-main-color{
+    background-color: #31994c;
+}
+
+.navbar-nav .nav-item:active{
+    background-color:#31994c;
+}
+.nav-is-active{
+    background-color:#31994c;
+}
