@@ -5,7 +5,6 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
@@ -37,7 +36,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily', 'slack'],
+            'channels' => ['single', 'slack'],
             'ignore_exceptions' => false,
         ],
 
@@ -96,5 +95,4 @@ return [
             'handler' => NullHandler::class,
         ],
     ],
-
 ];
