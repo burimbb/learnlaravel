@@ -55,6 +55,8 @@ Vue.component('Join', require('./components/Join.vue').default);
 Vue.component('TabList', require('./components/tabs/TabList.vue').default);
 Vue.component('TabComponent', require('./components/tabs/TabComponent.vue').default);
 
+Vue.component('Carousel', require('./components/Carousel.vue').default);
+
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue').default
