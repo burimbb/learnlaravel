@@ -73,6 +73,7 @@ Vue.component(
     Vue.component('EventDispatch', require('./components/EventDispatch.vue').default);
     Vue.component('MyForm', require('./components/MyForm.vue').default);
     Vue.component('PaymentForm', require('./components/PaymentForm.vue').default);
+    Vue.component('menu-list', require('./components/MenuList.vue').default);
     
     /* window.Event = new Vue(); */
     

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use App\Card;
 use App\Comment;
@@ -689,14 +689,18 @@ Route::get('/components/communication', function () {
     return view('components/communication');
 });
 
-//single used components in vue with inline template 
+//single used components in vue with inline template
 
 Route::resource('/tasks', 'TaskController');
 
-Route::get('/form/withvalidation', function(){
+Route::get('/form/withvalidation', function () {
     return view('/forms/withvalidation');
 });
 
-Route::get('/coupon', function(){
+Route::get('/coupon', function () {
     return view('/coupon');
+});
+
+Route::get('/scoped-slots', function () {
+    return view('/scopedslots');
 });
