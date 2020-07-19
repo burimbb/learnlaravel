@@ -20,3 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('posts', 'PostController');
 Route::resource('tags', 'TagController')->only(['index', 'show']);
 Route::get('posts/{id}/tags', 'TagController@index');
+
+Route::get('/stats', function () {
+    return [
+        'lessons' => 145,
+        'series' => 5200,
+    ];
+});

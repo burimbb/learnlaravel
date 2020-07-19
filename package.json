@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "flickity": "^2.2.1",
+        "font-awesome": "^4.7.0",
         "moment": "^2.26.0",
         "pace-js": "^1.0.2",
         "portal-vue": "^2.1.7",

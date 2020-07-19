@@ -704,3 +704,29 @@ Route::get('/coupon', function () {
 Route::get('/scoped-slots', function () {
     return view('/scopedslots');
 });
+
+//Laracast FAQ
+
+Route::get('/laracast/faq', function(){
+    return view('laracasts.faq', [
+        'questions' => [
+            (object) array(
+                'question' => 'How are you!',
+                'answer' => 'Fine <strong>and</strong> you.'
+            ),
+            (object) array(
+                'question' => 'How are you doing!',
+                'answer' => 'well <strong>thank</strong> you.'
+            ),
+            (object) array(
+                'question' => 'How is going today!',
+                'answer' => 'Very <strong>good</strong>.'
+            ),
+            (object) array(
+                'question' => 'How is going today!',
+                'answer' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium asperiores pariatur consectetur non numquam, ut ad explicabo fugiat dicta sapiente? Natus numquam cum corrupti! Error tenetur totam nostrum iure saepe!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium asperiores pariatur consectetur non numquam, ut ad explicabo fugiat dicta sapiente? Natus numquam cum corrupti! Error tenetur totam nostrum iure saepe!</p>'
+            ),
+        ]
+    ]);
+});

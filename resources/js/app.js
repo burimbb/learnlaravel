@@ -55,6 +55,7 @@ Vue.component('Join', require('./components/Join.vue').default);
 Vue.component('TabList', require('./components/tabs/TabList.vue').default);
 Vue.component('TabComponent', require('./components/tabs/TabComponent.vue').default);
 
+Vue.component('Testimonials', require('./components/Testimonials.vue').default);
 Vue.component('Carousel', require('./components/Carousel.vue').default);
 
 Vue.component(
@@ -76,6 +77,7 @@ Vue.component(
     Vue.component('MyForm', require('./components/MyForm.vue').default);
     Vue.component('PaymentForm', require('./components/PaymentForm.vue').default);
     Vue.component('menu-list', require('./components/MenuList.vue').default);
+    Vue.component('laracast-question', require('./components/LaracastQuestion.vue').default);
     
     /* window.Event = new Vue(); */
     
