@@ -3,6 +3,7 @@
 use App\Card;
 use App\Comment;
 use App\Department;
+use App\Events\UserHasCreated;
 use App\Events\UserReachedNegativePoints;
 use App\Exceptions\PostIsPrivate;
 use App\Http\Controllers\PayOrderController;
@@ -729,4 +730,11 @@ Route::get('/laracast/faq', function(){
             ),
         ]
     ]);
+});
+
+//test if sending emails with events are same as queues speed
+Route::get('/test/event/emails', function(){
+    event(new UserHasCreated());
+
+    return "DONE";
 });
