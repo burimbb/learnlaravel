@@ -56,7 +56,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Constructor of this class AppServiceProvider
+     * Destructor of this class AppServiceProvider
      */
     public function __destruct()
     {

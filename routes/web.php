@@ -23,6 +23,12 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
+use Facades\App\Apple;
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\LazyCollection;
 
 Route::get('/', function () {
     /* dd(Str::partNumber(44454741354)); */
@@ -308,12 +314,6 @@ Route::get('/form', function () {
 Route::post('/form', function () {
     return request()->all();
 })->name('form.post');
-
-use Facades\App\Apple;
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\LazyCollection;
 
 Route::get('/realtimefacades', function () {
     return Apple::publish('my note');
@@ -737,4 +737,22 @@ Route::get('/test/event/emails', function(){
     event(new UserHasCreated());
 
     return "DONE";
+});
+
+//Symfony Finder class
+Route::get('/symfony/finder', function(){
+    $files = Finder::create()
+        ->in(app()->storagePath())
+        ->name("*.test")
+        ->contains("{hello}");
+
+    foreach ($files as $file) {
+        $content = File::get($file->getRealPath());
+
+        $updated = str_replace('{hello}', 'my-key', $content);
+
+        File::put($file->getRealPath(), $updated);
+
+        return "Done";
+    }
 });
