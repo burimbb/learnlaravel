@@ -89867,6 +89867,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  /* mode: 'history', */
   routes: [{
     path: '/tab1',
     component: _components_Tab1__WEBPACK_IMPORTED_MODULE_0__["default"]
