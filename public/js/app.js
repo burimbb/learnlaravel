@@ -2010,6 +2010,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2047,6 +2048,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log('remaining called!');
       return {
         total: remaining,
+        months: remaining.months(),
         days: remaining.days(),
         hours: remaining.hours(),
         minutes: remaining.minutes(),
@@ -68730,6 +68732,10 @@ var render = function() {
           ])
         : _c("div", { staticClass: "alert-success" }, [
             _c("span", {
+              domProps: { textContent: _vm._s(_vm.remaining.months) }
+            }),
+            _vm._v(" Months\n            "),
+            _c("span", {
               domProps: { textContent: _vm._s(_vm.remaining.days) }
             }),
             _vm._v(" Days\n            "),
@@ -87661,6 +87667,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -87747,6 +87755,8 @@ function () {
 
   return _class;
 }())();
+
+window.moment = moment__WEBPACK_IMPORTED_MODULE_6___default.a;
 /**
  * Next, we will create a fresh Vue application instance and attach it to
 * the page. Then, you may begin adding components to this application

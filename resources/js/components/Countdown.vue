@@ -7,6 +7,7 @@
                 </div>
             </div>
             <div class="alert-success" v-else>
+                <span v-text="remaining.months"></span> Months
                 <span v-text="remaining.days"></span> Days
                 <span v-text="remaining.hours"></span> Hours
                 <span v-text="remaining.minutes"></span> Minutes
@@ -58,6 +59,7 @@ export default {
 
             return {
                 total: remaining, 
+                months: remaining.months(), 
                 days: remaining.days(), 
                 hours: remaining.hours(), 
                 minutes: remaining.minutes(), 
