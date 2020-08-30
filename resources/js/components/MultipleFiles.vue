@@ -1,4 +1,4 @@
-<style>
+<style lang="css">
   input[type="file"]{
     position: absolute;
     top: -500px;
@@ -17,21 +17,26 @@
 
 <template>
   <div class="container">
-    <div class="large-12 medium-12 small-12 cell">
-      <label>Files
-        <input type="file" id="files" ref="files" multiple v-on:change="handleFilesUpload()"/>
-      </label>
-    </div>
-    <div class="large-12 medium-12 small-12 cell">
-      <div v-for="(file, key) in files" :key="key" class="file-listing">{{ file.name }} <span class="remove-file" v-on:click="removeFile( key )">Remove</span></div>
-    </div>
-    <br>
-    <div class="large-12 medium-12 small-12 cell">
-      <button v-on:click="addFiles()">Add Files</button>
-    </div>
-    <br>
-    <div class="large-12 medium-12 small-12 cell">
-      <button v-on:click="submitFiles()">Submit</button>
+    <div class="card card-body">
+      <div class="large-12 medium-12 small-12 cell">
+        <label>Files
+          <input type="file" id="files" ref="files" multiple v-on:change="handleFilesUpload()"/>
+        </label>
+      </div>
+      
+      <div class="large-12 medium-12 small-12 cell">
+        <div v-for="(file, key) in files" :key="key" class="file-listing">{{ file.name }} <span class="remove-file" v-on:click="removeFile( key )">Remove</span></div>
+      </div>
+      <br>
+
+      <div class="large-12 medium-12 small-12 cell">
+        <button v-on:click="addFiles()">Add Files</button>
+      </div>
+      <br>
+
+      <div class="large-12 medium-12 small-12 cell">
+        <button v-on:click="submitFiles()">Submit</button>
+      </div>
     </div>
   </div>
 </template>

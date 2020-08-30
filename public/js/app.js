@@ -2405,6 +2405,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   /*
@@ -69196,74 +69201,76 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-      _c("label", [
-        _vm._v("Files\n      "),
-        _c("input", {
-          ref: "files",
-          attrs: { type: "file", id: "files", multiple: "" },
-          on: {
-            change: function($event) {
-              return _vm.handleFilesUpload()
-            }
-          }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "large-12 medium-12 small-12 cell" },
-      _vm._l(_vm.files, function(file, key) {
-        return _c("div", { key: key, staticClass: "file-listing" }, [
-          _vm._v(_vm._s(file.name) + " "),
-          _c(
-            "span",
-            {
-              staticClass: "remove-file",
-              on: {
-                click: function($event) {
-                  return _vm.removeFile(key)
-                }
+    _c("div", { staticClass: "card card-body" }, [
+      _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+        _c("label", [
+          _vm._v("Files\n        "),
+          _c("input", {
+            ref: "files",
+            attrs: { type: "file", id: "files", multiple: "" },
+            on: {
+              change: function($event) {
+                return _vm.handleFilesUpload()
               }
-            },
-            [_vm._v("Remove")]
-          )
+            }
+          })
         ])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+      ]),
+      _vm._v(" "),
       _c(
-        "button",
-        {
-          on: {
-            click: function($event) {
-              return _vm.addFiles()
+        "div",
+        { staticClass: "large-12 medium-12 small-12 cell" },
+        _vm._l(_vm.files, function(file, key) {
+          return _c("div", { key: key, staticClass: "file-listing" }, [
+            _vm._v(_vm._s(file.name) + " "),
+            _c(
+              "span",
+              {
+                staticClass: "remove-file",
+                on: {
+                  click: function($event) {
+                    return _vm.removeFile(key)
+                  }
+                }
+              },
+              [_vm._v("Remove")]
+            )
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+        _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                return _vm.addFiles()
+              }
             }
-          }
-        },
-        [_vm._v("Add Files")]
-      )
-    ]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-      _c(
-        "button",
-        {
-          on: {
-            click: function($event) {
-              return _vm.submitFiles()
+          },
+          [_vm._v("Add Files")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+        _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                return _vm.submitFiles()
+              }
             }
-          }
-        },
-        [_vm._v("Submit")]
-      )
+          },
+          [_vm._v("Submit")]
+        )
+      ])
     ])
   ])
 }
