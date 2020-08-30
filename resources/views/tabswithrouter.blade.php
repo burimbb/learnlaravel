@@ -10,7 +10,10 @@
         </section>
 
         <section>
-            <router-view></router-view>
+            {{-- check console, keep alive prevent component from remounting --}} 
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
         </section>
     </div>
 @endsection
