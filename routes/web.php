@@ -166,6 +166,10 @@ Route::get('/fileputcontent', function () {
 Route::get('/dispatchjob', function () {
     DoSomething::dispatchNow(5);
 
+    //dispatch when queue is ready
+    DoSomething::dispatch(5);
+    
+    //dispatch when queue is ready
     dispatch(new DoSomething(10));
 });
 

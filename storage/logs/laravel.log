@@ -310,9 +310,11 @@
 \" at C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php:457)
 [stacktrace]
 #0 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(341): Swift_Transport_AbstractSmtpTransport->assertResponseCode('550 5.7.0 Reque...', Array)
-#1 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\EsmtpTransport.php(305): Swift_Transport_AbstractSmtpTransport->executeCommand('DATA\\
+#1 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\EsmtpTransport.php(305): Swift_Transport_AbstractSmtpTransport->executeCommand('DATA\
+\
 ', Array, Array, false, NULL)
-#2 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(390): Swift_Transport_EsmtpTransport->executeCommand('DATA\\
+#2 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(390): Swift_Transport_EsmtpTransport->executeCommand('DATA\
+\
 ', Array, Array)
 #3 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(497): Swift_Transport_AbstractSmtpTransport->doDataCommand(Array)
 #4 C:\\Code\\LearnLaravel\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(516): Swift_Transport_AbstractSmtpTransport->doMailTransaction(Object(Swift_Message), 'hello@example.c...', Array, Array)
@@ -2040,3 +2042,36 @@
 [2020-08-16 15:32:09] local.CRITICAL: Destructed App Service Provider  
 [2020-08-16 15:32:23] local.CRITICAL: Destructed App Service Provider  
 [2020-08-16 15:33:37] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:03:50] local.INFO: DoSomething job executed  
+[2020-08-30 15:03:50] local.WARNING: DoSomething job executed warning  
+[2020-08-30 15:03:50] local.CRITICAL: DoSomething job executed critical  
+[2020-08-30 15:03:56] local.ALERT: DoSomething job executed alert  
+[2020-08-30 15:03:58] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:04:05] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:04:05] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:05:46] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:07] local.INFO: DoSomething job executed  
+[2020-08-30 15:06:07] local.WARNING: DoSomething job executed warning  
+[2020-08-30 15:06:07] local.CRITICAL: DoSomething job executed critical  
+[2020-08-30 15:06:08] local.ALERT: DoSomething job executed alert  
+[2020-08-30 15:06:08] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:10] local.INFO: DoSomething job executed  
+[2020-08-30 15:06:10] local.WARNING: DoSomething job executed warning  
+[2020-08-30 15:06:10] local.CRITICAL: DoSomething job executed critical  
+[2020-08-30 15:06:10] local.ALERT: DoSomething job executed alert  
+[2020-08-30 15:06:11] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:15] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:20] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:25] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:30] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:30] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:32] local.INFO: DoSomething job executed  
+[2020-08-30 15:06:32] local.WARNING: DoSomething job executed warning  
+[2020-08-30 15:06:32] local.CRITICAL: DoSomething job executed critical  
+[2020-08-30 15:06:32] local.ALERT: DoSomething job executed alert  
+[2020-08-30 15:06:33] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:37] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:42] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:50] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:06:57] local.CRITICAL: Destructed App Service Provider  
+[2020-08-30 15:07:02] local.CRITICAL: Destructed App Service Provider  

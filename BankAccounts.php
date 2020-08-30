@@ -78,4 +78,4 @@ $accounts = [
 
 $bank = new BankAccounts($accounts);
 
-var_dump($bank->filterBy("savings"));
+var_dump($bank->filterBy('savings'));
