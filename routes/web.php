@@ -760,3 +760,12 @@ Route::get('/symfony/finder', function(){
         return "Done";
     }
 });
+
+//google maps
+Route::get('/gmaps', function(){
+    $locations = (object)[
+        'city' => "Pristina"
+    ];
+    
+    return view('google.maps', compact('locations'));
+});
