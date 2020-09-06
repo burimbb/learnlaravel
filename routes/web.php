@@ -168,7 +168,7 @@ Route::get('/dispatchjob', function () {
 
     //dispatch when queue is ready
     DoSomething::dispatch(5);
-    
+
     //dispatch when queue is ready
     dispatch(new DoSomething(10));
 });
@@ -712,43 +712,43 @@ Route::get('/scoped-slots', function () {
 
 //Laracast FAQ
 
-Route::get('/laracast/faq', function(){
+Route::get('/laracast/faq', function () {
     return view('laracasts.faq', [
         'questions' => [
-            (object) array(
+            (object) [
                 'question' => 'How are you!',
                 'answer' => 'Fine <strong>and</strong> you.'
-            ),
-            (object) array(
+            ],
+            (object) [
                 'question' => 'How are you doing!',
                 'answer' => 'well <strong>thank</strong> you.'
-            ),
-            (object) array(
+            ],
+            (object) [
                 'question' => 'How is going today!',
                 'answer' => 'Very <strong>good</strong>.'
-            ),
-            (object) array(
+            ],
+            (object) [
                 'question' => 'How is going today!',
                 'answer' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium asperiores pariatur consectetur non numquam, ut ad explicabo fugiat dicta sapiente? Natus numquam cum corrupti! Error tenetur totam nostrum iure saepe!</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium asperiores pariatur consectetur non numquam, ut ad explicabo fugiat dicta sapiente? Natus numquam cum corrupti! Error tenetur totam nostrum iure saepe!</p>'
-            ),
+            ],
         ]
     ]);
 });
 
 //test if sending emails with events are same as queues speed
-Route::get('/test/event/emails', function(){
+Route::get('/test/event/emails', function () {
     event(new UserHasCreated());
 
-    return "DONE";
+    return 'DONE';
 });
 
 //Symfony Finder class
-Route::get('/symfony/finder', function(){
+Route::get('/symfony/finder', function () {
     $files = Finder::create()
         ->in(app()->storagePath())
-        ->name("*.test")
-        ->contains("{hello}");
+        ->name('*.test')
+        ->contains('{hello}');
 
     foreach ($files as $file) {
         $content = File::get($file->getRealPath());
@@ -757,15 +757,19 @@ Route::get('/symfony/finder', function(){
 
         File::put($file->getRealPath(), $updated);
 
-        return "Done";
+        return 'Done';
     }
 });
 
 //google maps
-Route::get('/gmaps', function(){
+Route::get('/gmaps/iframe', function () {
+    return view('google.maps');
+});
+//google maps
+Route::get('/gmaps', function () {
     $locations = (object)[
-        'city' => "Pristina"
+        'city' => 'Pristina'
     ];
-    
-    return view('google.maps', compact('locations'));
+
+    return view('google.maps1', compact('locations'));
 });
